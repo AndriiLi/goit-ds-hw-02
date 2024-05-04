@@ -97,9 +97,7 @@ def main():
                 case _:
                     print('unknown input')
 
-        except EOFError as e:
-            print(e)
-        except ValueError as e:
+        except Exception as e:
             print(e)
         except KeyboardInterrupt:
             pass
