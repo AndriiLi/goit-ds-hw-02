@@ -169,9 +169,9 @@ class Query(Db):
             """
             SELECT u.id, u.fullname, t.id AS task_id,  t.title, s.name
             FROM tasks AS t
-            INNER JOIN statuses s ON s.id = t.status_id
+            INNER JOIN statuses AS s ON s.id = t.status_id
             INNER JOIN users AS u ON u.id = t.user_id
-            WHERE s."name"  = 'in progress'
+            WHERE s.name  = 'in progress'
             ORDER BY u.id
             """
         )
