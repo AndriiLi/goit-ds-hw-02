@@ -43,7 +43,8 @@ def main():
                     break
                 case "1":
                     user_id = 9
-                    print_colored(f"Tasks for  user with id {user_id}: \n {query.get_all_user_tasks(user_id)}")
+                    result = query.get_all_user_tasks(user_id)
+                    print_colored(f"Tasks for  user with id: {user_id} count: {len(result)} \n {result}")
                 case "2":
                     status = STATUS_NEW['name']
                     result = query.get_all_tasks_with_by_status(status)
@@ -88,7 +89,7 @@ def main():
                     print_colored(f"Tasks by email template count: {len(result)} \n {result}")
                 case "12":
                     result = query.get_tasks_without_description()
-                    print(f"Tasks without description count: {len(result)} \n {result}")
+                    print_colored(f"Tasks without description count: {len(result)} \n {result}")
                 case "13":
                     result = query.get_users_tasks_in_progress_statuses()
                     print_colored(f"Users and tasks in progress status count: {len(result)} \n {result}")
